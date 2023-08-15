@@ -13,8 +13,8 @@ for(const showConfig of showsConfig.filter(s => s.download)) {
     const downloadedEpisodes = listDownloadedEpisodes(showConfig);
     const missingEpisodes = listMissingEpisodes(availableEpisodes, downloadedEpisodes);
 
-    downloadEpisodes(missingEpisodes, showConfig);
-    await delay(100);
+    await downloadEpisodes(missingEpisodes, showConfig);
+    await delay(300);
 }
 
 async function downloadEpisodes(missingEpisodes, showConfig) {
@@ -32,14 +32,17 @@ async function downloadEpisodes(missingEpisodes, showConfig) {
     
         console.log('Downloading ' + fileName);
         await download({
-            concurrency: 25,
+            concurrency: 10,
             outputFile: path,
             streamUrl: maybeGet720pUrl(episode),
-            logger: logger
+            logger: logger,
+            maxRetries: 10
         });
-        ffmetadata.write(path, { episode_id: episode.id, comment: episodeNumber }, (err) => {
-            if (err) console.error("Error writing metadata", err);
-        });
+        // XXX: ffmetadata overwrites all but first stream so no audio
+        // const metadata = { episode_id: episode.id, comment: episodeNumber };
+        // ffmetadata.write(path, metadata, { preserveStreams: true}, (err) => {
+        //     if (err) console.error("Error writing metadata", err);
+        // });
         addDownloadedEpisode(showConfig, episode)
     }
 }
