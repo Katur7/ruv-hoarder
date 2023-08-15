@@ -42,6 +42,9 @@ async function getList(type) {
             }, []);
             writeFileSync(cachePath(type), JSON.stringify(data));
             return data;
+        } else {
+            console.error('Usage: npm run list tv|kids');
+            process.exit(1);
         }
     }
 }
