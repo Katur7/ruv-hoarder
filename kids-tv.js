@@ -16,11 +16,16 @@ for(const showConfig of showsConfig.filter(s => s.download)) {
 }
 
 async function downloadEpisodes(missingEpisodes, showConfig) {
+    if(missingEpisodes.length > 0 && showConfig.thetvdb) {
+        console.log('Episodes with wrong numbers; rename according to thetvdb');
+        console.log(showConfig.thetvdb);
+    }
     for(const episode of missingEpisodes) {
         const episodeNumber = showConfig.season !== undefined
             ? `S${pad(showConfig.season)}E${pad(episode.number)}`
             : episode.number;
-        const fileName = `${showConfig.name} - ${episodeNumber} - ${episode.title}.mp4`;
+        const invalid_named = showConfig.thetvdb ? ' invalid_named' : '';
+        const fileName = `${showConfig.name} - ${episodeNumber} - ${episode.title}${invalid_named}.mp4`;
         const path = join(showConfig.path, fileName);
     
         console.log('Downloading ' + fileName);
