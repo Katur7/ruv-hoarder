@@ -6,5 +6,57 @@
         "name": "Bluey",
         "id": 31684,
         "download": true
+    },
+    {
+        "title": "bluey_s2",
+        "path": "/mnt/Storage/kids/tv/Bluey/Season 2",
+        "season": 2,
+        "name": "Bluey",
+        "id": 34551,
+        "download": true
+    },
+    {
+        "title": "hey_duggee_s1",
+        "path": "/mnt/Storage/kids/tv/Hey Duggee/Season 1",
+        "season": 1,
+        "name": "Hey Duggee",
+        "id": 30699,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/hey-duggee/seasons/official/1"
+    },
+    {
+        "title": "hey_duggee_s3",
+        "path": "/mnt/Storage/kids/tv/Hey Duggee/Season 3",
+        "season": 3,
+        "name": "Hey Duggee",
+        "id": 32756,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/hey-duggee/seasons/official/3"
+    },
+    {
+        "title": "bubble_guppies_s3",
+        "path": "/mnt/Storage/kids/tv/Bubble Guppies/Season 3",
+        "season": 3,
+        "name": "Bubble Guppies",
+        "id": 30227,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/3"
+    },
+    {
+        "title": "fantus_s1",
+        "path": "/mnt/Storage/kids/tv/Fantus og maskinene/Season 1",
+        "season": 1,
+        "name": "Fantus og maskinene",
+        "id": 33199,
+        "download": true
+    },
+    {
+        "title": "borste_s1",
+        "path": "/mnt/Storage/kids/tv/Borste/Season 1",
+        "season": 1,
+        "name": "Borste",
+        "id": 34279,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/borste/seasons/official/1"
     }
 ]
