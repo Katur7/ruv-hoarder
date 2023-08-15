@@ -14,6 +14,9 @@ export function logger(...args) {
         bar.increment();
     } else if(args[0].startsWith('Spawning FFMPEG')) {
         console.log('Converting file')
+    } else if(args[0].startsWith('You need to provide a quality with a master playlist')) {
+        console.error(...args);
+        process.exit(1);
     } else if(args[0].startsWith('All segments received')) {
     } else {
         console.log(...args);
