@@ -91,5 +91,14 @@
         "id": 33816,
         "download": true,
         "thetvdb": "https://thetvdb.com/series/the-smurfs-2021/seasons/official/1 and https://smurfs.fandom.com/wiki/Special:Search"
+    },
+    {
+        "title": "paw_patrol_s8",
+        "path": "/mnt/Storage/kids/tv/Paw Patrol/Season 8",
+        "season": 8,
+        "name": "Paw Patrol",
+        "id": 34358,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/8"
     }
 ]
