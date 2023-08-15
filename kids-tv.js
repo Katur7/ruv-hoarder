@@ -5,7 +5,7 @@ import { logger } from './logger.js'
 
 const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
 
-for(const showConfig of showsConfig) {
+for(const showConfig of showsConfig.filter(s => s.download)) {
     console.log('##### Starting to check and download ' + showConfig.title);
     const availableEpisodes = await listAvailableEpisodes(showConfig);
     const downloadedEpisodes = listDownloadedEpisodes(showConfig);
