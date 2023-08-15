@@ -43,6 +43,14 @@
         "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/3"
     },
     {
+        "title": "numberblocks_s1_s2",
+        "path": "/mnt/Storage/kids/tv/Numberblocks",
+        "name": "Numberblocks",
+        "id": 34994,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/1"
+    },
+    {
         "title": "fantus_s1",
         "path": "/mnt/Storage/kids/tv/Fantus og maskinene/Season 1",
         "season": 1,
@@ -58,5 +66,30 @@
         "id": 34279,
         "download": true,
         "thetvdb": "https://thetvdb.com/series/borste/seasons/official/1"
+    },
+    {
+        "title": "smastund_s1",
+        "path": "/mnt/Storage/kids/tv/Smástund/Season 1",
+        "season": 1,
+        "name": "Smástund",
+        "id": 33098,
+        "download": true
+    },
+    {
+        "title": "smastund_s2",
+        "path": "/mnt/Storage/kids/tv/Smástund/Season 2",
+        "season": 2,
+        "name": "Smástund",
+        "id": 34298,
+        "download": true
+    },
+    {
+        "title": "the_smurfs_s1",
+        "path": "/mnt/Storage/kids/tv/The Smurfs (2021)/Season 1",
+        "season": 1,
+        "name": "The Smurfs (2021)",
+        "id": 33816,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/the-smurfs-2021/seasons/official/1 and https://smurfs.fandom.com/wiki/Special:Search"
     }
 ]
