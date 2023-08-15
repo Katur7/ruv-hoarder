@@ -1,8 +1,9 @@
-import { readFileSync, writeFileSync, statSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { download } from 'node-hls-downloader';
 import ffmetadata from 'ffmetadata';
 import { logger } from './logger.js'
+import { cacheIsValid } from './shared/cache.js';
 
 const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
 
@@ -44,7 +45,7 @@ async function downloadEpisodes(missingEpisodes, showConfig) {
 }
 
 async function listAvailableEpisodes(showConfig) {
-    if(cacheIsValid(showConfig.title)) {
+    if(cacheIsValid(cachePath(showConfig.title))) {
         console.log('Getting cached episode list for ' + showConfig.title);
         return JSON.parse(readFileSync(cachePath(showConfig.title)))
     } else {
@@ -89,18 +90,6 @@ function listMissingEpisodes(availableEpisodes, downloadedEpisodes) {
         }
         return acc;
     }, []);
-}
-
-function cacheIsValid(title) {
-    try {
-        const today = new Date();
-        const {mtime} = statSync(cachePath(title));
-        return today.getFullYear() === mtime.getFullYear()
-            && today.getMonth() == mtime.getMonth()
-            && today.getDate() == mtime.getDate();
-    } catch (error) {
-        return false;
-    }
 }
 
 function cachePath(title) {
