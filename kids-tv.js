@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, statSync } from 'fs';
 import { join } from 'path';
 import { download } from 'node-hls-downloader';
+import ffmetadata from 'ffmetadata';
 import { logger } from './logger.js'
 
 const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
@@ -28,6 +29,9 @@ async function downloadEpisodes(missingEpisodes, showConfig) {
             outputFile: path,
             streamUrl: maybeGet720pUrl(episode),
             logger: logger
+        });
+        ffmetadata.write(path, { episode_id: episode.id, comment: episodeNumber }, (err) => {
+            if (err) console.error("Error writing metadata", err);
         });
         addDownloadedEpisode(showConfig, episode)
     }
