@@ -48,7 +48,7 @@
         "name": "Numberblocks",
         "id": 34994,
         "download": true,
-        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/1"
+        "thetvdb": "https://thetvdb.com/series/numberblocks/seasons/official/1"
     },
     {
         "title": "fantus_s1",
@@ -73,7 +73,7 @@
         "season": 1,
         "name": "Smástund",
         "id": 33098,
-        "download": true
+        "download": false
     },
     {
         "title": "smastund_s2",
