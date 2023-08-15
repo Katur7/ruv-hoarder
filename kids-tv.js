@@ -108,7 +108,8 @@ function cachePath(title) {
 
 function maybeGet720pUrl(episode) {
     const { file, event } = episode;
-    return file.replace(event.toString() + 'T0.m3u8', '2400/index.m3u8');
+    const re = new RegExp(event.toString() + '[TA]0.m3u8');
+    return file.replace(re, '2400/index.m3u8');
 }
 
 function pad(number) {
