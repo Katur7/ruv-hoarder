@@ -12,7 +12,8 @@ for(const showConfig of showsConfig.filter(s => s.download)) {
     const downloadedEpisodes = listDownloadedEpisodes(showConfig);
     const missingEpisodes = listMissingEpisodes(availableEpisodes, downloadedEpisodes);
 
-    downloadEpisodes(missingEpisodes, showConfig)
+    downloadEpisodes(missingEpisodes, showConfig);
+    await delay(100);
 }
 
 async function downloadEpisodes(missingEpisodes, showConfig) {
@@ -114,4 +115,8 @@ function maybeGet720pUrl(episode) {
 
 function pad(number) {
     return number.toString().padStart(2, '0');
+}
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
