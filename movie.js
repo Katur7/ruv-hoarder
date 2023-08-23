@@ -53,9 +53,9 @@ async function getProgramInfo(program) {
 
 async function downloadMovie(info) {
     console.log('Downloading ' + info.title);
-    await mkdir(info.path);
+    await mkdir(info.path, { recursive: true });
     await download({
-        concurrency: 25,
+        concurrency: 10,
         outputFile: join(info.path, info.title + '.mp4'),
         streamUrl: info.file,
         logger: logger,
