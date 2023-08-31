@@ -9,6 +9,7 @@
     "movie": "node movie.js",
     "list": "node list.js",
     "kids": "node kids-tv.js",
+    "compress": "node compress.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "cli-progress": "^3.12.0",
     "commander": "^9.4.1",
     "ffmetadata": "^1.7.0",
+    "fluent-ffmpeg": "^2.1.2",
     "node-hls-downloader": "^2.2.0"
   }
 }
