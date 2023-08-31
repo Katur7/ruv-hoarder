@@ -28,12 +28,12 @@ async function downloadEpisodes(missingEpisodes, showConfig) {
             : episode.number;
         const invalid_named = showConfig.thetvdb ? ' invalid_named' : '';
         const fileName = `${showConfig.name} - ${episodeNumber} - ${episode.title}${invalid_named}.mp4`;
-        const path = join(showConfig.path, fileName);
+        episode.path = join(showConfig.path, fileName);
     
         console.log('Downloading ' + fileName);
         await download({
             concurrency: 10,
-            outputFile: path,
+            outputFile: episode.path,
             streamUrl: maybeGet720pUrl(episode),
             logger: logger,
             maxRetries: 10
@@ -101,8 +101,17 @@ function cachePath(title) {
 
 function maybeGet720pUrl(episode) {
     const { file, event } = episode;
-    const re = new RegExp(event.toString() + '[TA]0.m3u8');
-    return file.replace(re, '2400/index.m3u8');
+    console.log(file);
+    if(file.endsWith('U0.m3u8')) {
+        // Only 3600 (1080p) quality exists
+        console.log('Only 1080p quality exists; run command to compress');
+        console.log(`$ ffmpeg -i ${episode.path} -vcodec libx265 -crf 28 ${episode.path.replace('.mp4', ' - compressed.mp4')}`);
+        const re = new RegExp(event.toString() + 'U0.m3u8');
+        return file.replace(re, '3600/index.m3u8');
+    } else {
+        const re = new RegExp(event.toString() + '[TA]0.m3u8');
+        return file.replace(re, '2400/index.m3u8');
+    }
 }
 
 function pad(number) {
