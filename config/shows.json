@@ -98,7 +98,33 @@
         "season": 8,
         "name": "Paw Patrol",
         "id": 34358,
-        "download": true,
+        "download": false,
         "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/8"
+    },
+    {
+        "title": "daniel_tiger_s1",
+        "path": "/mnt/Storage/kids/tv/Daniel Tiger's Neighborhood/Season 1",
+        "season": 1,
+        "name": "Daniel Tiger's Neighborhood",
+        "id": 18988,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
+    },
+    {
+        "title": "daniel_tiger_s1_other",
+        "path": "/mnt/Storage/kids/tv/Daniel Tiger's Neighborhood/Season 1",
+        "season": 1,
+        "name": "Daniel Tiger's Neighborhood",
+        "id": 18990,
+        "download": true,
+        "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
+    },
+    {
+        "title": "simon_s1",
+        "path": "/mnt/Storage/kids/tv/Simon/Season 1",
+        "season": 1,
+        "name": "Simon",
+        "id": 24574,
+        "download": true
     }
 ]
