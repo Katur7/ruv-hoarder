@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, readdirSync, statSync } from 'fs';
 import { rm } from 'fs/promises';
 import { hrtime } from 'process';
 import cliProgress from 'cli-progress';
@@ -6,8 +6,13 @@ import ffmpeg from 'fluent-ffmpeg'
 import { join } from 'path';
 
 const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
+const arg = process.argv[2];
 
-for(const showConfig of showsConfig.filter(s => s.title == 'bubble_guppies_s3')) {
+const filteredShows = (arg === 'all')
+                        ? showsConfig.filter(s => s.compress)
+                        : showsConfig.filter(s => s.title == arg);
+
+for(const showConfig of filteredShows) {
     console.log('##### Starting to check and compress ' + showConfig.title);
     const uncompressedEpisodes = listUncompressedEpisodes(showConfig);
     // compressEpisode(showConfig, uncompressedEpisodes[0])
