@@ -48,9 +48,7 @@ async function compressEpisode(showConfig, episode) {
                 .on('end', function(stdout, stderr) {
                     bar.update(100);
                     bar.stop();
-                    const end = hrtime.bigint();
-                    const seconds = (end - start) / 1000000000n;
-                    console.log(`Compressing took ${seconds} seconds`);
+                    printStats(path, start)
                     resolve();
                 })
                 .save(path.replace('.mp4', '.hevc.mp4'));
@@ -67,4 +65,20 @@ async function deleteUncompressed(showConfig, episode) {
     console.log('Deleting uncompressed version of', episode);
     const path = join(showConfig.path, episode);
     return await rm(path); 
+}
+
+function printStats(path, startTime) {
+    const end = hrtime.bigint();
+    const seconds = (end - startTime) / 1000000000n;
+    console.log(`Compressing took ${seconds} seconds`);
+
+    const uncompressedSize = (statSync(path).size / (1024*1024)).toFixed(1);
+    const compressedSize = (statSync(path.replace('.mp4', '.hevc.mp4')).size / (1024*1024)).toFixed(1);
+    const ratio = ((compressedSize / uncompressedSize) * 100);
+    const compression = (100 - ratio).toFixed(2);
+    console.log(`Reduced size from ${uncompressedSize} to ${compressedSize} => ${compression}% compression`);
+
+    if(compression < 40) {
+        throw new Error('No use in compressing; set compress to false');
+    }
 }
