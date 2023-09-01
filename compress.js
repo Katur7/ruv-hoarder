@@ -8,6 +8,11 @@ import { join } from 'path';
 const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
 const arg = process.argv[2];
 
+if(!arg) {
+    console.log('Usage: npm run compress all|show_title');
+    process.exit(1);
+}
+
 const filteredShows = (arg === 'all')
                         ? showsConfig.filter(s => s.compress)
                         : showsConfig.filter(s => s.title == arg);
@@ -81,7 +86,7 @@ function printStats(path, startTime) {
     const compressedSize = (statSync(path.replace('.mp4', '.hevc.mp4')).size / (1024*1024)).toFixed(1);
     const ratio = ((compressedSize / uncompressedSize) * 100);
     const compression = (100 - ratio).toFixed(2);
-    console.log(`Reduced size from ${uncompressedSize} to ${compressedSize} => ${compression}% compression`);
+    console.log(`Reduced size from ${uncompressedSize} MB to ${compressedSize} MB => ${compression}% compression`);
 
     if(compression < 40) {
         throw new Error('No use in compressing; set compress to false');
