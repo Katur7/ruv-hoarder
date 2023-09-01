@@ -1,6 +1,5 @@
 import { statSync } from 'fs';
 
-
 export function cacheIsValid(cachePath) {
     try {
         const today = new Date();

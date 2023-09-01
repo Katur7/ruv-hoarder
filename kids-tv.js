@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { download } from 'node-hls-downloader';
-import ffmetadata from 'ffmetadata';
+// import ffmetadata from 'ffmetadata';
 import { logger } from './logger.js'
 import { cacheIsValid } from './shared/cache.js';
 
