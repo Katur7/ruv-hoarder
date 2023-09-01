@@ -120,7 +120,7 @@
         "name": "Daniel Tiger's Neighborhood",
         "id": 18988,
         "download": true,
-        "compress": true,
+        "compress": false,
         "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
     },
     {
@@ -130,7 +130,7 @@
         "name": "Daniel Tiger's Neighborhood",
         "id": 18990,
         "download": true,
-        "compress": true,
+        "compress": false,
         "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
     },
     {
