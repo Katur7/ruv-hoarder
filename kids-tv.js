@@ -101,7 +101,6 @@ function cachePath(title) {
 
 function maybeGet720pUrl(episode) {
     const { file, event } = episode;
-    console.log(file);
     if(file.endsWith('U0.m3u8')) {
         // Only 3600 (1080p) quality exists
         console.log('Only 1080p quality exists; run command to compress');
