@@ -44,7 +44,7 @@ async function getProgramInfo(program) {
             title: title,
             file: json.episodes[0].file,
             subtitles: json.episodes[0].subtitles_url,
-            path: join('/mnt/Storage/movies', title)
+            path: join('/media/grimur/movies', title)
         }
         writeFileSync(cachePath(program.title), JSON.stringify(info));
         return info;
