@@ -48,6 +48,16 @@
         "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/3"
     },
     {
+        "title": "bubble_guppies_s4",
+        "path": "/media/grimur/kids/tv/Bubble Guppies/Season 4",
+        "season": 4,
+        "name": "Bubble Guppies",
+        "id": 33516,
+        "download": true,
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/4"
+    },
+    {
         "title": "numberblocks_s1_s2",
         "path": "/media/grimur/kids/tv/Numberblocks",
         "name": "Numberblocks",
@@ -99,7 +109,7 @@
         "season": 1,
         "name": "The Smurfs (2021)",
         "id": 33816,
-        "download": true,
+        "download": false,
         "compress": false,
         "thetvdb": "https://thetvdb.com/series/the-smurfs-2021/seasons/official/1 and https://smurfs.fandom.com/wiki/Special:Search"
     },
