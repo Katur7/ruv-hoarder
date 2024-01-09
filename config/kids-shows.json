@@ -15,7 +15,8 @@
         "name": "Bluey",
         "id": 34551,
         "download": true,
-        "compress": true
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/bluey-2018/seasons/official/2"
     },
     {
         "title": "hey_duggee_s1",
@@ -76,14 +77,32 @@
         "compress": false
     },
     {
-        "title": "borste_s1",
-        "path": "/media/grimur/kids/tv/Borste/Season 1",
-        "season": 1,
+        "title": "fantus_s2",
+        "path": "/media/grimur/kids/tv/Fantus og maskinene/Season 2",
+        "season": 2,
+        "name": "Fantus og maskinene",
+        "id": 35275,
+        "download": true,
+        "compress": true
+    },
+    {
+        "title": "fantus_s3",
+        "path": "/media/grimur/kids/tv/Fantus og maskinene/Season 3",
+        "season": 3,
+        "name": "Fantus og maskinene",
+        "id": 35276,
+        "download": true,
+        "compress": true
+    },
+    {
+        "title": "borste_s2",
+        "path": "/media/grimur/kids/tv/Borste/Season 2",
+        "season": 2,
         "name": "Borste",
         "id": 34279,
         "download": true,
         "compress": true,
-        "thetvdb": "https://thetvdb.com/series/borste/seasons/official/1 and https://m.imdb.com/title/tt17496158/episodes/?season=2"
+        "thetvdb": "https://thetvdb.com/series/borste/seasons/official/1 and https://www.dr.dk/drtv/saeson/boerste_355154"
     },
     {
         "title": "smastund_s1",
@@ -114,12 +133,32 @@
         "thetvdb": "https://thetvdb.com/series/the-smurfs-2021/seasons/official/1 and https://smurfs.fandom.com/wiki/Special:Search"
     },
     {
+        "title": "paw_patrol_s4",
+        "path": "/media/grimur/kids/tv/Paw Patrol/Season 4",
+        "season": 4,
+        "name": "Paw Patrol",
+        "id": 34357,
+        "download": true,
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/4"
+    },
+    {
+        "title": "paw_patrol_s7",
+        "path": "/media/grimur/kids/tv/Paw Patrol/Season 7",
+        "season": 7,
+        "name": "Paw Patrol",
+        "id": 31660,
+        "download": true,
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/7"
+    },
+    {
         "title": "paw_patrol_s8",
         "path": "/media/grimur/kids/tv/Paw Patrol/Season 8",
         "season": 8,
         "name": "Paw Patrol",
         "id": 34358,
-        "download": false,
+        "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/8"
     },

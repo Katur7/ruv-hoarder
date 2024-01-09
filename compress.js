@@ -5,7 +5,7 @@ import cliProgress from 'cli-progress';
 import ffmpeg from 'fluent-ffmpeg'
 import { join } from 'path';
 
-const showsConfig = JSON.parse(readFileSync('./config/shows.json'));
+const showsConfig = JSON.parse(readFileSync('./config/kids-shows.json'));
 const arg = process.argv[2];
 
 if(!arg) {

@@ -3,7 +3,7 @@ Downloader from RÚV (Sarpur) for backup and data hoarding.
 
 Needs ffmpeg installed globally.
 Commands found in package.json.
-Update config/shows.json to add shows to download.
+Update config/kids-shows.json to add shows to download.
 
 Example usage:
 * npm run list kids | grep 'Blæja'

@@ -11,3 +11,7 @@ export function cacheIsValid(cachePath) {
         return false;
     }
 }
+
+export function cachePath(title) {
+    return `./cache/.${title}.cache`;
+}
