@@ -7,6 +7,7 @@ import { cacheIsValid } from './shared/cache.js';
 import { logger } from './logger.js'
 
 const search = process.argv[2];
+const index = process.argv[3];
 
 if(search === undefined) {
     console.error('Usage: npm run movie "search_term"');
@@ -25,9 +26,17 @@ if(result.length === 0) {
         downloadSubtitles(info);
     }
 } else {
-    console.log('Found multiple result. Please try again with a more specific search term');
-    console.log('Found:');
-    console.table(result);
+    if(index) {
+        const info = await getProgramInfo(result[index]);
+        await downloadMovie(info);
+        if(info.subtitles) {
+            downloadSubtitles(info);
+        }
+    } else {
+        console.log('Found multiple result. Please try again with a more specific search term');
+        console.log('Found:');
+        console.table(result);
+    }
 }
 
 async function getProgramInfo(program) {
