@@ -1,0 +1,20 @@
+[
+    {
+        "title": "huso_s1",
+        "path": "/media/grimur/tv/Húsó/Season 1",
+        "season": 1,
+        "name": "Húsó",
+        "id": 34496,
+        "download": true,
+        "compress": true
+    },
+    {
+        "title": "afturelding_s1",
+        "path": "/media/grimur/tv/Afturelding/Season 1",
+        "season": 1,
+        "name": "Afturelding",
+        "id": 33837,
+        "download": true,
+        "compress": true
+    }
+]

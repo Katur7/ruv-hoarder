@@ -9,6 +9,7 @@
     "movie": "node movie.js",
     "list": "node list.js",
     "kids": "node kids-tv.js",
+    "tv": "node tv.js",
     "compress": "node compress.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
