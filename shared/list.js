@@ -6,42 +6,46 @@ export async function getList(type) {
         return JSON.parse(readFileSync(cachePath(type)))
     } else {
         console.log('Getting latest list from RUV');
-        if(type === 'tv') {
-            const url = 'https://api.ruv.is/api/programs/tv/all'
-            const res = await fetch(url);
-            const json = await res.json();
-            const data = json.map(j => {
-                return {
-                    title: j.title,
-                    id: j.id,
-                    // image: j.image
-                }
-            });
-            writeFileSync(cachePath(type), JSON.stringify(data));
-            return data;
-        } else if(type === 'kids') {
-            const url = 'https://api.ruv.is/api/programs/krakkaruv/all';
-            const res = await fetch(url);
-            const json = await res.json();
-            const data = json.reduce((acc, curr) => {
-                if(curr.format === 'tv') {
-                    acc.push({
-                        title: curr.title,
-                        id: curr.id,
-                        // image: curr.image
-                    });
-                    return acc;
-                } else {
-                    return acc;
-                }
-            }, []);
-            writeFileSync(cachePath(type), JSON.stringify(data));
-            return data;
-        } else {
-            console.error('Usage: npm run list tv|kids');
-            process.exit(1);
-        }
+        const url = urlFromType(type);
+        const res = await fetch(url);
+        const json = await res.json();
+        const programs = combinePanels(json.panels);
+        const data = programs.reduce((acc, curr) => {
+            if(curr.format === 'tv') {
+                acc.push({
+                    title: curr.title,
+                    id: curr.id,
+                    // image: curr.image
+                });
+                return acc;
+            } else {
+                return acc;
+            }
+        }, []);
+        writeFileSync(cachePath(type), JSON.stringify(data));
+        return data;
     }
+}
+
+function urlFromType(type) {
+    if(type === 'tv') {
+        return 'https://api.ruv.is/api/programs/featured/tv';
+    } else if(type === 'kids') {
+        return 'https://api.ruv.is/api/programs/featured/krakkaruv';
+    } else {
+        console.error('Usage: npm run list tv|kids');
+        process.exit(1);
+    }
+}
+
+function combinePanels(panels) {
+    const allPrograms = new Map();
+    panels.map(p => {
+        p.programs.map(prog => {
+            allPrograms.set(prog.id, prog);
+        });
+    });
+    return Array.from(allPrograms.values());
 }
 
 function cacheIsValid(type) {
