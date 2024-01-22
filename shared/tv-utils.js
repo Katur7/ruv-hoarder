@@ -1,6 +1,7 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'fs';
 import { join } from 'path';
 import { download } from 'node-hls-downloader';
+import ffmpeg from 'fluent-ffmpeg'
 import { logger } from '../logger.js'
 import { cacheIsValid, cachePath } from './cache.js';
 
@@ -26,6 +27,7 @@ export async function downloadEpisodes(missingEpisodes, showConfig) {
             logger: logger,
             maxRetries: 10
         });
+        await addEpisodeIdToMetadata(episode, showConfig.id);
         addDownloadedEpisode(showConfig, episode)
     }
 }
@@ -100,4 +102,27 @@ export function ensurePathExists(dir) {
 
 function pad(number) {
     return number.toString().padStart(2, '0');
+}
+
+async function addEpisodeIdToMetadata(episode, showId) {
+    const { path, id } = episode;
+    const taggedPath = path.replace('.mp4', '.tagged.mp4');
+    await new Promise((resolve) => {
+        ffmpeg(path)
+            .outputOptions([
+                '-c', 'copy',
+                '-movflags', 'use_metadata_tags',
+                '-metadata', `episode_uid="${id}"`,
+                '-metadata', `season_uid="${showId}"`
+            ])
+            .on('error', (err) => {
+                console.error('Cannot add metadata to video: ' + err.message);
+                throw new Error(err);
+            })
+            .on('end', () => {
+                resolve();
+            })
+            .save(taggedPath);
+    });
+    renameSync(taggedPath, path);
 }
