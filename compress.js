@@ -20,7 +20,6 @@ const filteredShows = (arg === 'all')
 for(const showConfig of filteredShows) {
     console.log('##### Starting to check and compress ' + showConfig.title);
     const uncompressedEpisodes = listUncompressedEpisodes(showConfig);
-    // compressEpisode(showConfig, uncompressedEpisodes[0])
     for(const episode of uncompressedEpisodes) {
         await compressEpisode(showConfig, episode);
         await deleteUncompressed(showConfig, episode);

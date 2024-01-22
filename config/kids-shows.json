@@ -19,16 +19,6 @@
         "thetvdb": "https://thetvdb.com/series/bluey-2018/seasons/official/2"
     },
     {
-        "title": "hey_duggee_s1",
-        "path": "/media/grimur/kids/tv/Hey Duggee/Season 1",
-        "season": 1,
-        "name": "Hey Duggee",
-        "id": 30699,
-        "download": true,
-        "compress": true,
-        "thetvdb": "https://thetvdb.com/series/hey-duggee/seasons/official/1"
-    },
-    {
         "title": "hey_duggee_s3",
         "path": "/media/grimur/kids/tv/Hey Duggee/Season 3",
         "season": 3,
@@ -47,16 +37,6 @@
         "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/3"
-    },
-    {
-        "title": "bubble_guppies_s4",
-        "path": "/media/grimur/kids/tv/Bubble Guppies/Season 4",
-        "season": 4,
-        "name": "Bubble Guppies",
-        "id": 33516,
-        "download": true,
-        "compress": true,
-        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/4"
     },
     {
         "title": "numberblocks_s1_s2",
@@ -128,7 +108,7 @@
         "season": 1,
         "name": "The Smurfs (2021)",
         "id": 33816,
-        "download": false,
+        "download": true,
         "compress": false,
         "thetvdb": "https://thetvdb.com/series/the-smurfs-2021/seasons/official/1 and https://smurfs.fandom.com/wiki/Special:Search"
     },
@@ -141,16 +121,6 @@
         "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/4"
-    },
-    {
-        "title": "paw_patrol_s7",
-        "path": "/media/grimur/kids/tv/Paw Patrol/Season 7",
-        "season": 7,
-        "name": "Paw Patrol",
-        "id": 31660,
-        "download": true,
-        "compress": true,
-        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/7"
     },
     {
         "title": "paw_patrol_s8",
