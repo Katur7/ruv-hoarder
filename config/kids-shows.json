@@ -63,7 +63,7 @@
         "name": "Fantus og maskinene",
         "id": 35275,
         "download": true,
-        "compress": true
+        "compress": false
     },
     {
         "title": "fantus_s3",
@@ -72,7 +72,7 @@
         "name": "Fantus og maskinene",
         "id": 35276,
         "download": true,
-        "compress": true
+        "compress": false
     },
     {
         "title": "borste_s2",
