@@ -143,16 +143,6 @@
         "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
     },
     {
-        "title": "daniel_tiger_s1_other",
-        "path": "/media/grimur/kids/tv/Daniel Tiger's Neighborhood/Season 1",
-        "season": 1,
-        "name": "Daniel Tiger's Neighborhood",
-        "id": 18990,
-        "download": true,
-        "compress": false,
-        "thetvdb": "https://thetvdb.com/series/daniel-tigers-neighborhood/seasons/official/1"
-    },
-    {
         "title": "simon_s1",
         "path": "/media/grimur/kids/tv/Simon/Season 1",
         "season": 1,
