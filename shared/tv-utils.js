@@ -89,7 +89,7 @@ export function maybeGet720pUrl(episode) {
         const re = new RegExp(event.toString() + 'U0.m3u8');
         return file.replace(re, '3600/index.m3u8');
     } else {
-        const re = new RegExp(event.toString() + '[TA]0.m3u8');
+        const re = new RegExp(event.toString() + '[TA][01].m3u8');
         return file.replace(re, '2400/index.m3u8');
     }
 }
