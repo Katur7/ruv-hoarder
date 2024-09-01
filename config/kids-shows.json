@@ -1,14 +1,5 @@
 [
     {
-        "title": "bluey_s1",
-        "path": "/media/grimur/kids/tv/Bluey/Season 1",
-        "season": 1,
-        "name": "Bluey",
-        "id": 31684,
-        "download": true,
-        "compress": true
-    },
-    {
         "title": "bluey_s2",
         "path": "/media/grimur/kids/tv/Bluey/Season 2",
         "season": 2,
@@ -17,6 +8,16 @@
         "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/bluey-2018/seasons/official/2"
+    },
+    {
+        "title": "bluey_s3",
+        "path": "/media/grimur/kids/tv/Bluey/Season 3",
+        "season": 3,
+        "name": "Bluey",
+        "id": 36429,
+        "download": true,
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/bluey-2018/seasons/official/3"
     },
     {
         "title": "hey_duggee_s3",
@@ -75,14 +76,33 @@
         "compress": false
     },
     {
-        "title": "borste_s2",
-        "path": "/media/grimur/kids/tv/Borste/Season 2",
-        "season": 2,
+        "title": "borste_s1",
+        "path": "/media/grimur/kids/tv/Borste/Season 1",
+        "season": 1,
         "name": "Borste",
         "id": 34279,
         "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/borste/seasons/official/1 and https://www.dr.dk/drtv/saeson/boerste_355154"
+    },
+    {
+        "title": "borste_s2",
+        "path": "/media/grimur/kids/tv/Borste/Season 2",
+        "season": 2,
+        "name": "Borste",
+        "id": 35360,
+        "download": true,
+        "compress": true,
+        "thetvdb": "https://thetvdb.com/series/borste/seasons/official/2 and https://www.dr.dk/drtv/saeson/boerste_355154"
+    },
+    {
+        "title": "borste_og_bondegarden_s1",
+        "path": "/media/grimur/kids/tv/Borste og bondegarden/Season 1",
+        "season": 1,
+        "name": "Borste og bondegarden",
+        "id": 36006,
+        "download": true,
+        "compress": true
     },
     {
         "title": "smastund_s1",
@@ -130,7 +150,7 @@
         "id": 34358,
         "download": true,
         "compress": true,
-        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/8"
+        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/4"
     },
     {
         "title": "daniel_tiger_s1",

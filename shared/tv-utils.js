@@ -20,12 +20,13 @@ export async function downloadEpisodes(missingEpisodes, showConfig) {
         ensurePathExists(showConfig.path);
     
         console.log('Downloading ' + fileName);
+        const masterPlaylist = await getMasterPlaylist(episode.file);
         await download({
             concurrency: 10,
             outputFile: episode.path,
-            streamUrl: maybeGet720pUrl(episode),
+            streamUrl: masterPlaylist['2400'] || masterPlaylist['3600'],
             logger: logger,
-            maxRetries: 10
+            maxRetries: 10,
         });
         await addEpisodeIdToMetadata(episode, showConfig.id);
         addDownloadedEpisode(showConfig, episode)
@@ -80,20 +81,6 @@ export function listMissingEpisodes(availableEpisodes, downloadedEpisodes) {
     }, []);
 }
 
-export function maybeGet720pUrl(episode) {
-    const { file, event } = episode;
-    if(file.endsWith('U0.m3u8')) {
-        // Only 3600 (1080p) quality exists
-        console.log('Only 1080p quality exists; run command to compress');
-        console.log(`$ ffmpeg -i ${episode.path} -vcodec libx265 -crf 28 ${episode.path.replace('.mp4', ' - compressed.mp4')}`);
-        const re = new RegExp(event.toString() + 'U0.m3u8');
-        return file.replace(re, '3600/index.m3u8');
-    } else {
-        const re = new RegExp(event.toString() + '[TA][01].m3u8');
-        return file.replace(re, '2400/index.m3u8');
-    }
-}
-
 export function ensurePathExists(dir) {
     if (!existsSync(dir)){
         mkdirSync(dir, { recursive: true });
@@ -125,4 +112,28 @@ async function addEpisodeIdToMetadata(episode, showId) {
             .save(taggedPath);
     });
     renameSync(taggedPath, path);
+}
+
+async function getMasterPlaylist(tokenizedUrl) {
+    const res = await fetch(tokenizedUrl);
+    const text = await res.text();
+    const lines = text.split('\n');
+
+    const url = new URL(tokenizedUrl);
+    const urlPrefix = url.origin + url.pathname.substring(0, url.pathname.lastIndexOf('/'));
+
+    const subtitleLine = lines.find((line) => line.includes('TYPE=SUBTITLES')) || '';
+    const subtitleUrlStr = subtitleLine.split(',').find((attribute) => attribute.startsWith('URI=')) || '';
+    const subtitleUrl = subtitleUrlStr.slice(5, -1)     // Cut off URI=" and last "
+    
+    const segments = {
+        subtitles: urlPrefix + '/' + subtitleUrl
+    };
+    
+    const streamsByQuality = lines.filter((line) => line.startsWith('3600') || line.startsWith('2400'));
+    for(const stream of streamsByQuality) {
+        const quality = stream.match(/\d+/);
+        segments[quality] = urlPrefix + '/' + stream.replace(/\r$/, '');
+    }
+    return segments;
 }
