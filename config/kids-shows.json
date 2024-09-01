@@ -30,14 +30,14 @@
         "thetvdb": "https://thetvdb.com/series/hey-duggee/seasons/official/3"
     },
     {
-        "title": "bubble_guppies_s3",
-        "path": "/media/grimur/kids/tv/Bubble Guppies/Season 3",
-        "season": 3,
+        "title": "bubble_guppies_s4",
+        "path": "/media/grimur/kids/tv/Bubble Guppies/Season 4",
+        "season": 4,
         "name": "Bubble Guppies",
-        "id": 30227,
+        "id": 36787,
         "download": true,
         "compress": true,
-        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/3"
+        "thetvdb": "https://thetvdb.com/series/bubble-guppies/seasons/official/4"
     },
     {
         "title": "numberblocks_s1_s2",
@@ -138,16 +138,6 @@
         "season": 4,
         "name": "Paw Patrol",
         "id": 34357,
-        "download": true,
-        "compress": true,
-        "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/4"
-    },
-    {
-        "title": "paw_patrol_s8",
-        "path": "/media/grimur/kids/tv/Paw Patrol/Season 8",
-        "season": 8,
-        "name": "Paw Patrol",
-        "id": 34358,
         "download": true,
         "compress": true,
         "thetvdb": "https://thetvdb.com/series/paw-patrol/seasons/official/4"
