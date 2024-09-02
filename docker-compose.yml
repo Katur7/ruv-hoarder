@@ -1,0 +1,14 @@
+# docker compose run ruv-hoarder
+services:
+  ruv-hoarder:
+    build: .
+    init: true
+    network_mode: "container:gluetun"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - ./:/home/node/app
+      # Mount paths used in kids-shows.json
+      - /media/grimur/kids/tv:/media/grimur/kids/tv

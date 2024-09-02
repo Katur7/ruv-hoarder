@@ -1,0 +1,17 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ../config/gluetun/island-vpn.ovpn:/gluetun/island-vpn.ovpn:ro
+      - ../config/gluetun/island-vpn.pass.txt:/gluetun/pass.txt:ro
+    env_file: "../config/gluetun/gluetun.env"
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=openvpn
+      - OPENVPN_CUSTOM_CONFIG=/gluetun/island-vpn.ovpn
+      - STORAGE_FILEPATH=""
