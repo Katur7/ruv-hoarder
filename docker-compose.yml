@@ -1,3 +1,4 @@
+# cd gluetun && docker compose up
 # docker compose run ruv-hoarder
 services:
   ruv-hoarder:
@@ -12,3 +13,4 @@ services:
       - ./:/home/node/app
       # Mount paths used in kids-shows.json
       - /media/grimur/kids/tv:/media/grimur/kids/tv
+    command: "npm run kids"
